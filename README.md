@@ -6,8 +6,9 @@ This is a pd patch to try and implement Pattern Synthesis. The main source of in
 [Works in sound and pattern synthesis folio of works](https://openresearch.surrey.ac.uk/esploro/outputs/doctoral/Works-in-Sound-and-Pattern-Synthesis/99516858802346#file-0)
 
 ### Considerations
-There is a plain synth engine as a way to hear results.
-No note duration or velocity are being used at the moment, as well as no midi note generation.
+There is a plain synth engine as a way to hear results.  
+~~No note duration or velocity are being used at the moment, as well as no midi note generation.~~  
+Midi is now implemented.
 
 ## Implementation considerations
 

@@ -1,14 +1,14 @@
 #N canvas 108 38 1812 987 12;
-#X obj -30 -270 tgl 129 0 empty empty Run 0 -12 0 20 -262027 -193135
--1 0 1;
+#X obj -30 -270 tgl 129 0 empty empty Run 0 -12 0 20 #fcf828 #bc24b8
+#000000 0 1;
 #X obj 1010 370 int;
 #X obj 1050 370 + 1;
 #X obj 1010 340 metro 500, f 11;
 #X obj 1010 440 mod 16;
-#X obj 400 -330 hradio 20 0 0 16 empty empty empty 0 -8 0 10 -208899
--49125 -1 0;
+#X obj 400 -330 hradio 20 0 0 16 empty empty empty 0 -8 0 10 #cc0008
+#2cfc90 #000000 0;
 #X msg 1340 -240 number \$1;
-#X floatatom 290 -110 14 0 0 2 Number_of_Steps - -;
+#X floatatom 290 -110 14 0 0 2 Number_of_Steps - - 0;
 #X obj 290 -82 int;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array array1 16 float 3;
@@ -17,10 +17,10 @@
 #X coords 0 1 16 0 420 270 1;
 #X restore 400 -300 graph;
 #X obj 1000 30 tabread array1;
-#X floatatom 1010 500 5 0 0 0 - - -;
-#X floatatom 1000 60 5 0 0 0 - - -;
+#X floatatom 1010 500 5 0 0 0 - - - 0;
+#X floatatom 1000 60 5 0 0 0 - - - 0;
 #X obj 1000 123 * 1000;
-#X floatatom 1000 152 14 0 0 0 - - -;
+#X floatatom 1000 152 14 0 0 0 - - - 0;
 #X obj 1000 93 clip 0.05 1;
 #X msg 1190 -240 \; array1 resize \$1;
 #X obj 1460 210 r step-duration;
@@ -34,14 +34,14 @@
 #X msg 1190 -160 \; array2 resize \$1;
 #X obj 40 1590 metro 500;
 #X obj 1480 240 r step-reps;
-#X floatatom 500 1300 8 0 0 0 - - -;
+#X floatatom 500 1300 8 0 0 0 - - - 0;
 #X obj 940 942 *~, f 4;
-#X obj 940 980 dac~, f 7;
+#X obj 940 1029 dac~, f 7;
 #X obj 1280 -10 tabread array2;
 #X obj 1280 19 int;
-#X floatatom 1280 90 5 0 0 0 - - -;
-#X obj 1020 850 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X floatatom 1280 90 5 0 0 0 - - - 0;
+#X obj 1020 850 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 960 910 vline~;
 #X obj 1280 118 s step-reps;
 #X msg 980 880 1 20 0 \, 0 30 20;
@@ -67,17 +67,17 @@
 #X restore 400 310 graph;
 #X obj 40 1160 int;
 #X obj 40 1230 mod 16;
-#X obj 400 280 hradio 20 0 0 4 empty empty empty 0 -8 0 10 -208899
--49125 -1 0;
+#X obj 400 280 hradio 20 0 0 4 empty empty empty 0 -8 0 10 #cc0008
+#2cfc90 #000000 0;
 #X obj 940 760 mtof;
-#X floatatom 260 500 14 0 0 2 Number_of_Notes - -;
+#X floatatom 260 500 14 0 0 2 Number_of_Notes - - 0;
 #X obj 260 528 int;
 #X msg 180 1350 \; array3 resize \$1;
 #X msg 40 1350 number \$1;
 #X obj 1480 360 expr $f1 / $f2;
 #X obj 1358 362 expr $f1 * $f2;
-#X obj -30 -90 tgl 129 1 empty empty XMultiply/ODivide 0 -10 0 10 -262144
--1 -1 0 1;
+#X obj -30 -90 tgl 129 1 empty empty XMultiply/ODivide 0 -10 0 10 #fcfcfc
+#000000 #000000 0 1;
 #N canvas 735 23 450 300 select_mul_div 0;
 #X obj 140 110 spigot;
 #X obj 80 110 spigot;
@@ -162,7 +162,7 @@ trig;
 #X text 40 1290 related to resizing the notes table;
 #X text -30 80 should we divide the steps or multiply;
 #X obj 300 1180 int;
-#X floatatom 300 1210 5 0 0 0 - - -;
+#X floatatom 300 1210 5 0 0 0 - - - 0;
 #X obj 300 1150 tabread array3;
 #X obj 300 1120 r note-pos;
 #X obj 300 1238 s note-value;
@@ -183,7 +183,7 @@ table;
 ;
 #X obj 80 430 makenote;
 #X obj 80 480 noteout, f 15;
-#X floatatom 150 430 5 0 0 2 MIDI_Channel - -;
+#X floatatom 150 430 5 0 0 2 MIDI_Channel - - 0;
 #X obj 80 220 r note-value;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array array4 4 float 3;
@@ -192,7 +192,7 @@ table;
 #X restore 400 610 graph;
 #X text 690 880 step velocity/dur;
 #X obj 319 1491 int;
-#X floatatom 319 1521 5 0 0 0 - - -;
+#X floatatom 319 1521 5 0 0 0 - - - 0;
 #X obj 320 1370 r note-pos;
 #X text 320 1340 read from velocity table;
 #X obj 320 1400 tabread array4;
@@ -202,13 +202,16 @@ table;
 #X obj 410 1550 s note-dur;
 #X obj 180 1400 r notes-table-size;
 #X msg 180 1430 \; array4 resize \$1;
-#X obj 340 1460 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 340 1460 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 340 1430 r note-trigger;
-#X obj 40 210 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 40 210 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X obj 40 180 r note-trigger;
-#X floatatom 80 280 5 0 0 0 - - -;
+#X floatatom 80 280 5 0 0 0 - - - 0;
+#X obj 996 944 tgl 33 0 empty empty empty 17 7 0 10 #faff00 #000000
+#000000 0 1;
+#X obj 940 983 *~, f 4;
 #X connect 0 0 40 0;
 #X connect 1 0 2 0;
 #X connect 1 0 4 0;
@@ -228,6 +231,7 @@ table;
 #X connect 21 0 110 0;
 #X connect 22 0 36 1;
 #X connect 22 0 37 0;
+#X connect 24 0 143 0;
 #X connect 26 0 27 0;
 #X connect 27 0 63 0;
 #X connect 28 0 31 0;
@@ -307,3 +311,6 @@ table;
 #X connect 139 0 141 0;
 #X connect 140 0 139 0;
 #X connect 141 0 120 0;
+#X connect 142 0 143 1;
+#X connect 143 0 25 0;
+#X connect 143 0 25 1;
